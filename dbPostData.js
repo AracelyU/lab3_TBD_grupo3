@@ -41,11 +41,11 @@ async function importarDatos(){
     if (emergencyCount === 0) {
         // Si no hay datos, insertar documentos
         await emergencyCollection.insertMany([
-            { id_emergency: 1, emergency_name: 'Incendio forestal en comuna Lautaro', emergency_location: 'Lautaro, Región de la Araucanía', emergency_type: '0', statement_date: '2023-10-15', id_state: 1 },
-            { id_emergency: 2, emergency_name: 'Incendio forestal en Viña del Mar', emergency_location: 'Viña del Mar, Región de Valparaíso', emergency_type: '0', statement_date: '2023-10-14', id_state: 1 },
+            { id_emergency: 1, emergency_name: 'Incendio forestal en comuna Lautaro', emergency_location: 'Lautaro, Región de la Araucanía', emergency_type: '0', statement_date: '2023-10-15', id_state: 2 },
+            { id_emergency: 2, emergency_name: 'Incendio forestal en Viña del Mar', emergency_location: 'Viña del Mar, Región de Valparaíso', emergency_type: '0', statement_date: '2023-10-14', id_state: 2 },
             { id_emergency: 3, emergency_name: 'Erupción Volcán Villarica', emergency_location: 'Región de la Araucanía', emergency_type: '1', statement_date: '2023-10-16', id_state: 1 },
-            { id_emergency: 4, emergency_name: 'Erupción complejo volcánico Puyehue', emergency_location: 'Región de los Ríos', emergency_type: '1', statement_date: '2023-10-12', id_state: 1 },
-            { id_emergency: 5, emergency_name: 'Terremoto de Iquique', emergency_location: 'Región de Tarapacá', emergency_type: '2', statement_date: '2023-10-15', id_state: 1 },
+            { id_emergency: 4, emergency_name: 'Erupción complejo volcánico Puyehue', emergency_location: 'Región de los Ríos', emergency_type: '1', statement_date: '2023-10-12', id_state: 2 },
+            { id_emergency: 5, emergency_name: 'Terremoto de Iquique', emergency_location: 'Región de Tarapacá', emergency_type: '2', statement_date: '2023-10-15', id_state: 2 },
             { id_emergency: 6, emergency_name: 'Terremoto Tocopilla', emergency_location: 'Región de Antofagasta', emergency_type: '2', statement_date: '2023-10-13', id_state: 1 },
             { id_emergency: 7, emergency_name: 'Derrumbe Santiago', emergency_location: 'Región Metropolitana', emergency_type: '3', statement_date: '2023-10-09', id_state: 1 },
             { id_emergency: 8, emergency_name: 'Derrumbes en Illapel', emergency_location: 'Región de Coquimbo', emergency_type: '3', statement_date: '2023-10-10', id_state: 1 },
@@ -367,18 +367,18 @@ async function importarDatos(){
     const taskCount = await taskCollection.countDocuments({});
     if (taskCount === 0) {
         await taskCollection.insertMany([
-            { id_task: 1, task_name: 'Atender heridos', task_description: 'Ayudar a gente afectada directamente por el desastre', volunteers_required: 10, id_state: 1 },
+            { id_task: 1, task_name: 'Atender heridos', task_description: 'Ayudar a gente afectada directamente por el desastre', volunteers_required: 10, id_state: 2 },
             { id_task: 2, task_name: 'Extraer escombros', task_description: 'Retirar los desechos del lugar', volunteers_required: 15, id_state: 1 },
-            { id_task: 3, task_name: 'Apagar fuego', task_description: 'Ayudar a combatir el incendio', volunteers_required: 30, id_state: 1 },
-            { id_task: 4, task_name: 'Guiar a lugar seguro', task_description: 'Buscar un lugar seguro al desastre', volunteers_required: 5, id_state: 1 },
-            { id_task: 5, task_name: 'Realizar SOS', task_description: 'Hacer una señal de auxilio', volunteers_required: 4, id_state: 1 },
+            { id_task: 3, task_name: 'Apagar fuego', task_description: 'Ayudar a combatir el incendio', volunteers_required: 30, id_state: 2 },
+            { id_task: 4, task_name: 'Guiar a lugar seguro', task_description: 'Buscar un lugar seguro al desastre', volunteers_required: 5, id_state: 2 },
+            { id_task: 5, task_name: 'Realizar SOS', task_description: 'Hacer una señal de auxilio', volunteers_required: 4, id_state: 2 },
             { id_task: 6, task_name: 'Cubrir conductos de ventilación', task_description: 'Cerrar puertas y ventanas con paños húmedos', volunteers_required: 10, id_state: 1 },
             { id_task: 7, task_name: 'Ayudar a subir a un lugar alto', task_description: 'Subir a un cerro o árbol', volunteers_required: 5, id_state: 1 },
-            { id_task: 8, task_name: 'Ayudar a evacuar las casas', task_description: 'Ayudar a la gente a que resguarde sus productos de valor', volunteers_required: 10, id_state: 1 },
-            { id_task: 9, task_name: 'Establecer centro de comandos', task_description: 'Coordinar con voluntarios y otras organizaciones', volunteers_required: 9, id_state: 1 },
-            { id_task: 10, task_name: 'Suministrar alimentos', task_description: 'Asignar alimentos a los afectados', volunteers_required: 7, id_state: 1 },
+            { id_task: 8, task_name: 'Ayudar a evacuar las casas', task_description: 'Ayudar a la gente a que resguarde sus productos de valor', volunteers_required: 10, id_state: 2 },
+            { id_task: 9, task_name: 'Establecer centro de comandos', task_description: 'Coordinar con voluntarios y otras organizaciones', volunteers_required: 9, id_state: 2 },
+            { id_task: 10, task_name: 'Suministrar alimentos', task_description: 'Asignar alimentos a los afectados', volunteers_required: 7, id_state: 2 },
             { id_task: 11, task_name: 'Evaluar daños', task_description: 'Realizar evaluación completa para determinar las necesidades a largo plazo', volunteers_required: 5, id_state: 1 },
-            { id_task: 12, task_name: 'Atender psicológicamente', task_description: 'Ofrecer apoyo psicológico a personas traumatizadas', volunteers_required: 3, id_state: 1 },
+            { id_task: 12, task_name: 'Atender psicológicamente', task_description: 'Ofrecer apoyo psicológico a personas traumatizadas', volunteers_required: 3, id_state: 2 },
         ]);
         console.log('Datos de task importados correctamente');
     } else {
